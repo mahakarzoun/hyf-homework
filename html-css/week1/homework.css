@@ -1,0 +1,227 @@
+
+  
+body{
+max-width: 100%;
+padding-left:30px;
+padding-top:30px;
+position:relative;
+background: linear-gradient(  #dfe0e2, #585858);
+background-repeat:no-repeat;
+margin:0px;
+border:1px bold #a19d9d;
+}
+
+.container {
+width: 100%; 
+background-color: #a19d9d;  /**dosnt show**/
+display: flex;
+}
+
+.aside {
+background:#efd8d8;
+color:#a19d9d;
+width:22%;
+padding:22px;
+word-wrap: break-word; 
+}
+
+
+.aside img {
+border-radius: 50%;
+width: 140px;
+height: 140px;
+box-shadow: 3px 3px 5px 1px      rgba(0,0,0,.5);
+}
+
+.img {
+text-align: center;
+margin: 0px;
+
+}
+
+h1 {
+margin-top:0px;
+margin-left:20px;
+padding-top:35px;
+text-align: left;
+letter-spacing:3px;
+font-family:serif;
+}
+
+h2 {
+color:#585858;
+font-size: 17px; 
+text-transform: uppercase;
+font-weight: bold;
+}
+
+.resume {
+text-align:left;  
+font-family: Arial, Helvetica, sans-serif; 
+font-size:15px;
+}
+
+
+
+.bar{
+width: 100%;
+background-color:#a19d9d;
+}
+
+
+.box{
+box-sizing: border-box;
+
+
+}
+
+.box h2 {
+color:#585858;
+font-size: 13px; 
+text-transform: uppercase;
+font-weight: bold;
+}
+
+
+
+
+.html {width: 50%;
+background-color: #585858
+}
+.css {
+width: 40%;
+background-color: #585858;
+}
+.js {
+width: 20%;    /** when i put 10 if became wider **/
+
+background-color: #585858;
+} 
+
+
+
+.main{
+background:white; 
+font-family:'Franklin Gothic Medium' , Arial,  sans-serif;
+color:#a19d9d;
+width: calc(78% - 30px);  
+padding:0px;
+justify-content:center;
+}
+
+.fullname {
+background:#585858; 
+font-family:'Franklin Gothic Medium' , Arial,  sans-serif;
+text-transform: uppercase;
+color:#efd8d8;
+width:100% ;
+padding:0;
+justify-content:center;
+height:20%;
+} 
+
+.fullname p {
+text-align: left;
+margin-left:20px;
+}
+span {
+border-bottom:2px solid #efd8d8;
+padding-bottom: 5px;
+}
+
+.experience {
+margin-left:25px;   
+margin-top:30px;
+border-top: #a19d9d;
+}
+
+hr.new1 {
+border-top: 1px solid #a19d9d;
+margin-top:0px;
+}
+
+div ul{
+list-style-type:none;
+padding-left:0px;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+
+.main div h2{
+background-color:#efd8d8; 
+display: inline;  
+letter-spacing: 1px;
+
+
+
+}
+
+
+.experience h3 {
+margin:0px;  
+font-size:0.8;
+
+}
+.experience  h4 {
+font-style: italic;
+margin-top:0px;
+margin-bottom:10px;
+
+
+} 
+
+.info {
+display: flex;
+flex-wrap: nowrap;
+flex-direction: row;
+justify-content:center;
+width:100%;
+}  
+
+.info ul{
+margin-top: 10px;
+list-style-type:none;
+}
+
+
+.info li{
+padding:3px;
+text-align:center;
+
+
+}
+
+.contact-me {
+margin-right:30px;
+}
+
+.mail {
+margin-left:60px;   
+}
+
+.contact-me  a {   
+color:#b98e8e;
+}
+.fa {
+padding: 0;
+font-size: 30px;
+width: 60px;
+text-align: center;
+text-decoration: none;
+border-radius: 50%;
+background:#b98e8e;
+}
+
+.info h2 {
+color:#353333;
+
+}
+
+
+
+
+  
+ 
+      
+  
