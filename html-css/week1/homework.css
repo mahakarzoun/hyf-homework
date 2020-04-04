@@ -30,7 +30,7 @@ word-wrap: break-word;
 border-radius: 50%;
 width: 140px;
 height: 140px;
-box-shadow: 3px 3px 5px 1px      rgba(0,0,0,.5);
+box-shadow: 1px 1px 16px 0px rgba(0,0,0,.2);
 }
 
 .img {
