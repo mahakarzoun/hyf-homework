@@ -130,6 +130,10 @@ justify/content:center;
 width:25%;
 }
 
+.logos image {
+max-width:100px;
+}
+
 /*the footer*/
 
 .footer{
