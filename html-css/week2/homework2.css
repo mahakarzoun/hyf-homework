@@ -124,6 +124,8 @@ a:active {
 
 .logos a {
 	width: 25%;
+        padding: 10px 0;
+
 }
 
 .logos img {
