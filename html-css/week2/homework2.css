@@ -123,12 +123,11 @@ display:flex;
 flex-direction:row;
 flex-wrap:wrap;
 width:100%; 
-
+justify/content:center;
 }
 
-.logos > a > img{
-width:23%;
-margin:12px;
+.logos > a {
+width:25%;
 }
 
 /*the footer*/
@@ -142,7 +141,7 @@ padding-left:130px;
 width:inherit;
 }
 
-.footer h4,h5,h6,p{
+.footer h4,.footer h5,.footer h6,.footer p{
   color: ivory; 
 }
 
