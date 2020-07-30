@@ -1,31 +1,34 @@
-//peter's house
-let houseWide=8;
-let houseDeep=10;
-let houseHeight=10; 
-let volumeInMeters=houseHeight*houseDeep*houseWide;
+//I assign the four variables with peter's house dimensions.
+let height =10; //measured in meters
+let depth = 10;
+let width = 8;
+let gardenSizeInM2 = 100;
+let houseCost = 2500000; 
+const volumeInMeters = height * width * depth;
+const housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
 
-let gardenSizeInM2=100; 
-const peters_housePrice= 2500000;
-let housePrice= volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
-
-if (peters_housePrice>housePrice){
-console.log('Peter is paying too much');
+if (housePrice < houseCost) {
+   console.log('your paying too much');
 }
-else { console.log('Peter is paying too little');
+else if (housePrice === houseCost) {
+   console.log('you have a good deal');
 }
+else {
+   console.log('your paying too little');
+}; 
+// testing Julias's expenses by reassigning the variables
+height = 8;
+depth = 11, 
+width = 5;
+gardenSizeInM2 = 70;
+houseCost = 1000000;
 
-//Julia's house
-houseWide=5;
-houseDeep=11;
-housdeHeight=8;
-gardenSizeInmeter2=70; 
-volumeInMeters=houseHeight*houseDeep*houseWide;
-const Julias_housePrice= 1000000;
-
-housePrice= volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
-
-if (Julias_housePrice>housePrice){
-console.log('Julia is paying too much');
-}
-else { console.log('Julia is paying too little');
-}
+if (housePrice < houseCost) {
+    console.log('your paying too much');
+ }
+ else if (housePrice === houseCost) {
+    console.log('you have a good deal');
+ }
+ else {
+    console.log('your paying too little');
+ };
