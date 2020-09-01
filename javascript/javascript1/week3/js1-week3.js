@@ -1,4 +1,4 @@
-function getTravelTime (travelInformation){
+ function getTravelTime (travelInformation){
   return  `${timeInHours} hours and ${Math.floor(time % timeInHours * 60) } minutes`;
 }
 
@@ -9,7 +9,7 @@ function logoutSeriesText () {
    const precentageOfTheHours = (sumOfHours/701265.022)*100;
    const roundedProcentage = precentageOfTheHours.toFixed(4);
  console.log(`${seriesDuration[i].title} took ${roundedProcentage}% of your life`);
-   } // olgs out the loop function instead of doing it one time when i use return 
+   } 
 }
 
 
@@ -108,4 +108,3 @@ saveNote('Pick up groceries', 1);
 saveNote('Do laundry', 2);
 console.log(getNote(1));
 logOutNotesFormatted();
-
