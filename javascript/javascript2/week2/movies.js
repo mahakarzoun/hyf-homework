@@ -45,14 +45,6 @@ return element.match(words);
 })
 const numberOfWords = searchedWords.length;
 console.log(numberOfWords);
-/*const arrOfTitles = newMovieArr.filter (element => element.title).map(element => element.title);
-const searchedWords = arrOfTitles.filter(element => {
-const words = /71|surfer|alien/ig;
-let search = element.match(words);
-return  search.length;
-})
-
-console.log(searchedWords); Cannot read property 'length' of null*/
 
 //7.
 //1. divide the titles into a array of strings  check 
@@ -62,19 +54,7 @@ console.log(searchedWords); Cannot read property 'length' of null*/
 const splittedWords = arrOfTitles.map(element => element.split(' '));
 let arr = splittedWords.forEach( element => element.filter((item,index) => 
 element.indexOf(item) != index));
-
-
 console.log(splittedWords)
-
-/*let strArray = [ "q", "w", "w", "w", "e", "i", "u", "r"];
-let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) != index)*/
-//OR 
-
-  /*var array = ["q", "w", "w", "e", "i", "u", "r"],
-    seen = array.filter((s => v => s.has(v) || !s.add(v))(new Set));
-
-console.log(seen);
- */
 
 //8 Average Rating
 //!. filter and map to excute a  rating string
