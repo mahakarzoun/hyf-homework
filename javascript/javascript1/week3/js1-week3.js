@@ -1,5 +1,5 @@
  function getTravelTime (travelInformation){
-  return  `${timeInHours} hours and ${Math.floor(time % timeInHours * 60) } minutes`;
+  return  `${timeInHours} hours and ${timeInMin} minutes`;
 }
 
 
@@ -66,6 +66,7 @@ const travelInformation = {
 };
 const time = travelInformation.destinatioDistance / travelInformation.speed;
 const timeInHours = Math.floor(time);
+const timeInMin = Math.floor(time % timeInHours * 60);
 const travelTime = getTravelTime (travelInformation);
 console.log(travelTime);
 
