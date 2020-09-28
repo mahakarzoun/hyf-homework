@@ -16,6 +16,7 @@ function getReply(commandRequested) {
     }
 }
 
+let client = { name: null, todo: [] };
 
 function greeting(commandRequested) {
     commandRequested = commandRequested || "";
@@ -45,7 +46,7 @@ function sayMyName() {
 
 function getToday() {
     const date = new Date();
-    console.log(`Today is ${date.getDay()} of ${months[date.getMonth()]}`);
+    console.log(`Today is ${date.getDate()} of ${months[date.getMonth()]}`);
 }
 function addTodo(commandRequested) {
     const todo = extractTodo(commandRequested);
@@ -54,7 +55,7 @@ function addTodo(commandRequested) {
 
 function removeTodo(commandRequested) {
     const todo = extractTodo(commandRequested);
-    const todoIndex = client.todo.findIndex(task => task == todo);
+    const todoIndex = client.todo.findIndex(task => task === todo); // strict equality
     if (todoIndex == -1) {
         console.error(`this todo '${todo}' was not found in your list `);
         return;
@@ -79,7 +80,7 @@ function setTimer(commandRequested) {
     commandRequested = commandRequested || "";
     const splittedCommand = commandRequested.split(' ');
     /// [set a timer for n unit ]
-    if (splittedCommand.length == 6) {
+    if (splittedCommand.length === 6) {
         let time = Number.parseInt(splittedCommand[4]);
         const unit = splittedCommand[5];
 
@@ -106,9 +107,6 @@ function getCommandIndex(commandRequested) {
     }
     return -1;
 }
-
-let timer;
-let client = { name: null, todo: [] };
 
 const commands = [
     { id: 0, pattern: "my name is" },
