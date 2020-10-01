@@ -1,5 +1,5 @@
 const podcasts = [{
-    name: 'The mystery om of Johan Klausen Varbourg',
+    name: 'The mystery  of Johan Klausen Varbourg',
     imageUrl: 'https://picsum.photos/536/354'
 },
 {
@@ -16,16 +16,19 @@ const podcasts = [{
 ];
 
 const pageBody = document.querySelector('body');
+const heading = document.createElement('h1');
+heading.innerHTML = "The prodcast"
+pageBody.appendChild(heading);
+
 const podcastsUlist = document.createElement('ul');
-podcastsUlist.innerText = 'The podcast';
 pageBody.appendChild(podcastsUlist);
 
 for (let i = 0; i < podcasts.length; i++) {
     let podcastsList = document.createElement('li');
     podcastsUlist.appendChild(podcastsList);
-    const heading = document.createElement('h2')
-    heading.innerHTML = podcasts[i].name;
-    podcastsList.appendChild(heading);
+    const prodcastName = document.createElement('h2')
+    prodcastName.innerHTML = podcasts[i].name;
+    podcastsList.appendChild(prodcastName);
 
     if (podcasts[i].imgUrl) {
         let img = document.createElement('img');
@@ -45,23 +48,25 @@ function imageInserter(imageUrl, elementToAppendImageTo) {
 imageInserter('https://picsum.photos/536/354', document.querySelector('body'))
 
 //simple eventlistener
+const btnsDiv = document.createElement('div');
+pageBody.appendChild(btnsDiv);
 const button = document.createElement('button');
 button.innerHTML = 'click the button !';
-button.style.cssText = 'width: 150px; height: 40px; color: blue; margin: 20px;';
+
 
 button.addEventListener('click', () => {
     button.innerHTML = 'Button clicked!';
 });
-pageBody.appendChild(button);
+btnsDiv.appendChild(button);
 
 // dark mode light mode
 const anotherButton = document.createElement('button');
-pageBody.appendChild(anotherButton);
-anotherButton.innerText = 'light mode';
-document.querySelector('anotherbutton');
-anotherButton.addEventListener('click', function changeColor() {
-    anotherButton.innerHTML = 'dark mode';
-    pageBody.style.cssText = 'background: black; color: white';
-});
+anotherButton.innerText = 'change mode';
 
-pageBody.appendChild(anotherButton);
+
+function changeColor() {
+    pageBody.classList.toggle("dark-mode");
+}
+
+anotherButton.addEventListener ("click", changeColor)
+btnsDiv.appendChild(anotherButton);
