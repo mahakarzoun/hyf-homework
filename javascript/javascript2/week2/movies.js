@@ -15,12 +15,8 @@ const eightiesMovies = movies.filter( element => {
 });
 console.log(eightiesMovies.length)
 
-// extra key 
+// 4. add a tag key  
 const movieRating = movies.filter(element =>element.rating)
-const moviesListWTag = movieRating.map(element => ({ element, 'tag': ""})
-);
-// or  
-console.log(moviesListWTag);
 const newMovieArr = movieRating.map(element => {
     if (element.rating >= 7 ) {
         return Object.assign(element, {tag: "good"})
