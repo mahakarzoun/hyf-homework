@@ -8,41 +8,51 @@ function getTheShortestWord (danishWords) {
     }, danishWords[0]);
     return shortest  // correct ?
     }
-getTheShortestWord(danishWords)
-    
+
 //another way to solve this using sort() method
-function getTheShortestWord (danishWords) {
+function getTheShortestWord1 (danishWords) {
 let sortedDanishWords = danishWords.sort((a, b) => a.length - b.length);
     return sortedDanishWords[0];
 }
-getTheShortestWord(danishWords)
+// calling the functions
+console.log(getTheShortestWord(danishWords))
+getTheShortestWord1(danishWords)
 
 
 // find and count the Danish letter 
 let å = [];
-let totalÅ = å.length
-const danishString = 'Jeg har en blå bil';
+let ø = [];
+let æ = [];
+let total1 = å.length + ø.length + æ.length
+const danishString = 'Blå grød med røde bær';
 
 function getDanishLetter(danishString) {
- danishString.split('');
- for (let i = 0; i < danishString.length ; i++) {
-    if (danishString.includes(danishSpecialLetters[0])) {
-    å.push(danishString[i]);
-      return {'total': totalÅ, 'å': totalÅ}
+  let splitedString = danishString.split('');
+ for (let i = 0; i < splitedString.length ; i++) {
+    if (splitedString.includes(danishSpecialLetters[0])) {
+      å.push(splitedString[i]);
     }
+    else if (splitedString.includes(danishSpecialLetters[1])) {
+      ø.push(splitedString[i]); 
+    }else if (splitedString.includes(danishSpecialLetters[2])) {
+      æ.push(splitedString[i]); 
+    }
+  return {'total':total1, 'å': å.length, "ø" : ø.length, "æ": æ.length}
   }
 }
-// after i found about match() and regExp
-const danishString2 = 'Blå grød med røde bær';
-const hasÅ = danishString2.match(/å/gi).length;
-const hasØ = danishString2.match(/ø/gi).length;
-const hasÆ = danishString2.match(/æ/gi).length;
-const total = hasÅ + hasÆ + hasØ;
 
-function getDanishLetter2(danishString2) {
+// after i found about match() and regExp
+const hasÅ = danishString.match(/å/gi).length;
+const hasØ = danishString.match(/ø/gi).length;
+const hasÆ = danishString.match(/æ/gi).length;
+const total2 = hasÅ + hasÆ + hasØ;
+
+function getDanishLetter2 (){
     const total = hasÅ + hasÆ + hasØ;
     return {'total': total, 'æ': hasÆ, 'ø': hasØ, 'å': hasÅ};
 }
-function getDanishLetter2(danishString2)
+// calling the functions
+console.log(getDanishLetter(danishString))
+getDanishLetter2()
 
 
