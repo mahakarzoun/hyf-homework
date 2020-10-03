@@ -1,0 +1,22 @@
+[
+    {"orderOne":
+        {
+        "name":"pizza",
+        "orderId": 35,
+        "price":100,
+        "listOfDrinks": ["coca cola", "orange juice", "pepsi"],
+        "extra": ["cheese", "lattece","tomato"],
+        "sauce": ["mastard", "ketchup"]
+        }
+    },
+        {    
+        "orderTwo":{
+        "name":"burger",
+        "orderId": 35,
+        "price":75,
+        "listOfDrinks": ["coca cola", "orange juice", "pepsi"],
+        "extra": ["pickles", "lattece","tomato"],
+        "sauce": ["mastard", "ketchup"]
+        } 
+    }   
+]

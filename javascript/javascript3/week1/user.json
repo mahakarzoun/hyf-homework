@@ -1,0 +1,8 @@
+//a language that we can use it for more languages 
+    {
+        "orderName": "pizza",
+        "orderId": 35,
+        "price":75,
+        "listOfDrinks": ["coca cola", "orange juice", "pepsi"],
+        "extra": ["cheese", "lattece","tomato"]
+    }
