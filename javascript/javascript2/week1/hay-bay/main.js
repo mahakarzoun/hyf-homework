@@ -1,6 +1,6 @@
 console.log("Script loaded");
-
-const products = getAvailableProducts();
+debugger
+const products = window.getAvailableProducts();
 
 function renderProducts(products) {
   // your code here

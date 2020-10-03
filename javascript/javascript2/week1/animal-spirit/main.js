@@ -1,14 +1,12 @@
 // functions 
 function getAnimalNumber() {
-  let min = 0;
-  let max = 6;
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  let max = spiritualtraits.length;
+  return Math.floor(Math.random() * (max  + 1)) ;
 }
 
 function getAnilmalTraitsIndex() {
-  let min = 0;
   let max = 3;
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max + 1)) ;
 }
 
 function getYourSpiritualAnimal() {
@@ -19,11 +17,17 @@ function getYourSpiritualAnimal() {
   return `${spices} ${animalName}`
 }
 
-/*function savingData () {
-  let  input = document.getElementById("username").value; //??
-alert(input);
-}*/
 
+
+function LogOut (e) {
+  debugger
+  const input = document.querySelector("input[name='username']");
+  const name = input.value;
+  const Animal = getYourSpiritualAnimal();
+  let output = document.createElement('p')
+  output.innerText = `${name} the ${Animal}` 
+  bodyPage.appendChild(output)
+}
 // variables 
 const spiritualtraits = [
   { name: 'fox', traits: ['secretive', 'charming', 'Sneaky', 'curious'] },
@@ -37,9 +41,5 @@ const spiritualtraits = [
 
 //setting up the event 
 let bodyPage = document.querySelector("body")
-let userInput = document.getElementById('username');
-let btn = document.getElementById("genbutton");
- btn.addEventListener("click", function v() {
-  let output = document.createElement('p')
-  output.innerHTML= "username" + " the " + getYourSpiritualAnimal(); 
-});
+let btn = document.querySelector("#genbutton");
+ btn.addEventListener("click",LogOut);
