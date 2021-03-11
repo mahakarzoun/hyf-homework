@@ -1,4 +1,8 @@
 // variables 
+const input = document.querySelector("input[name='username']");
+const output = document.querySelector('#message')
+const btn = document.querySelector("#btnGenerate");
+
 const spiritualtraits = [
   { name: 'fox', traits: ['secretive', 'charming', 'Sneaky', 'curious'] },
   { name: 'turtle', traits: ['quiet', 'shy', 'sensitive', 'wise'] },
@@ -30,17 +34,27 @@ function getYourSpiritualAnimal() {
 }
 
 function LogOut(e) {
-  debugger
-  const input = document.querySelector("input[name='username']");
   const name = input.value;
+  if (name) { // " " // what about the first time 
   const Animal = getYourSpiritualAnimal();
-  let output = document.createElement('p')
+  
   output.innerText = `${name} the ${Animal}`
   bodyPage.appendChild(output)
+  } else {
+    output.innerText ='what is your name ??'
+  }
 }
 
+function  onFoucs(){
+  
+  if(input.innerText==""){
+    output.innerText='what is your name ??'
+  }
+  input.innerText="";
+}
 
-//setting up the event 
-const bodyPage = document.querySelector("body")
-const btn = document.querySelector("#genbutton");
+ 
 btn.addEventListener("click", LogOut);
+input.addEventListener("focus", onFoucs);
+
+

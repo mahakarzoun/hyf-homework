@@ -15,7 +15,7 @@ h1 {
     box-shadow: 0 10px 3px rgba(0,0,0,0.06)
 }
 
-#genbutton {
+#btnGenerate {
     margin : 20px;
     padding: 12px 24px 12px 24; 
     border: none;
@@ -35,3 +35,9 @@ h1 {
     background: #3ecf8e;
     font-family: 'Alex Brush', cursive; 
 }
+.output {
+    font-family: 'Tangerine', serif;
+    font-size: 48px;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
