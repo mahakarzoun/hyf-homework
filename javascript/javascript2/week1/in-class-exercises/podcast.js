@@ -62,6 +62,7 @@ btnsDiv.appendChild(button);
 // dark mode light mode
 const anotherButton = document.createElement('button');
 anotherButton.innerText = 'change mode';
+anotherButton.classList.add("mode")
 
 
 function changeColor() {

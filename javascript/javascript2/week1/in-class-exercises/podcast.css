@@ -33,3 +33,9 @@ button {
     color: white;
 }
 
+.dark-mode button.mode  {
+    background-color:#fdce42;
+    color: mintcream;
+    border-color: mintcream;
+    font-size: large;
+}
