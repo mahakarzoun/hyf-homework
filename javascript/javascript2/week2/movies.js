@@ -1,18 +1,15 @@
-const movies = [{"title": "'7   1","year": 2014,"rating": 7.2,"votes": 41702,"running_times": 5940},{"title": "'A' gai wak","year": 1983,"rating": 7.4,"votes": 11942,"running_times": 6300},{"title": "'Breaker' Morant","year": 1980,"rating": 7.9,"votes": 10702,"running_times": 6420},{"title": "'Crocodile' Dundee II","year": 1988,"rating": 5.5,"votes": 47180,"running_times": 6480},{"title": "(500) Days of Summer","year": 2009,"rating": 7.7,"votes": 412368,"running_times": 5700},{"title": "*batteries not included","year": 1987,"rating": 6.6,"votes": 25636,"running_times": 6360},{"title": "...E tu vivrai nel terrore! L'aldilà","year": 1981,"rating": 6.9,"votes": 16484,"running_times": 5220}];
+//1. short movie stitle array 
+ import {movies} from './moviesList'
 
-// short moviestitle array 
 const shortFilmsTitle = movies.filter(element => element.title.length < 12)
 console.log (shortFilmsTitle);
 
-// long moviestitle array  
+// 2.long moviestitle array  
 const longFilmsTitle = movies.filter(element => element.title.length >= 12)
 console.log (longFilmsTitle);
 
-// number of movies
-const eightiesMovies = movies.filter( element => {
-    if (element.year >= 1980 && element.year <= 1989)
-    return element;
-});
+//3.number of movies
+const eightiesMovies = movies.filter( element => element.year >= 1980 && element.year <= 1989);
 console.log(eightiesMovies.length)
 
 // 4. add a tag key  
@@ -35,9 +32,8 @@ console.log(specificRatingArr);
 //6count the number
 const arrOfTitles = newMovieArr.filter (element => element.title).map(element => element.title);
 const searchedWords = arrOfTitles.filter(element => {
-const words = /benjamin|surfer|alien/ig;
+const words = new RegExp(/benjamin|surfer|alien/ig);
 return element.match(words);
-
 })
 const numberOfWords = searchedWords.length;
 console.log(numberOfWords);
