@@ -1,5 +1,4 @@
 console.log("Script loaded");
-debugger
 const products = window.getAvailableProducts();
 
 function renderProducts(products) {
