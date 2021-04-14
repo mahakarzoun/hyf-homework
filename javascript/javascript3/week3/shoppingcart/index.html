@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>shoppingCart</title>
   <link type="text/css" rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/1cdc7da0ba.js" crossorigin="anonymous"></script>
 
 </head>
@@ -18,7 +20,7 @@
       <a href="#contact">Contact</a>
       <a href="#about">About</a>
     </div>
-    <p id =userName></p>
+    <p id=userName></p>
     <div class="personalINfo">
       <div class="icons" id="user">
         <i class="far fa-user"></i>
@@ -33,21 +35,22 @@
       </div>
     </div>
   </div>
-
-  <form>
-    <input type="text" id="search" placeholder="search for products">
-  </form>
-  <button class="btn"><i class="fas fa-search"></i></button>
+  <div id="searchDiv">
+    <form>
+      <input type="text" id="search" placeholder="search for products">
+    </form>
+    <button class="btn"><i class="fas fa-search"></i></button>
+  </div>
   <div class="title">
     <h1>shoppingbag </h1>
-    <h1 class = totalProducts></h1>
+    <h1 class=totalProducts></h1>
   </div>
   <main>
     <div id="mainPage">
     </div>
   </main>
   <script src="shoppingCart.js"></script>
-  
+
 </body>
 
 </html>
