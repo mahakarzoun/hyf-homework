@@ -4,7 +4,7 @@ let day = date.getDate();
 let months = date.getMonth() + 1;
 let year = date.getFullYear();
 
-function getSum(arr) {
+function calcSum(arr) {
   let counter = arr.reduce((a, b) => {
     return a + b
   })
@@ -29,7 +29,9 @@ function addActivity(activity, duration) {
   return obj
 }
 
-function showStatus(date) {
+function getStatus(date) {
+  const oneHour = 60
+  const MaxMINs = 240
   if (activities.length === 0) {
     return 'Add some activities before calling showStatus';
   }
@@ -43,13 +45,13 @@ function showStatus(date) {
   // number of activity 
   const numOfActivities = filteredArr.length;
   if (numOfActivities > 0) {
-    let sumOfTime = getSum(mapped);
+    let sumOfTime = calcSum(mapped);
     let time = getTime(sumOfTime);
 
-    if (sumOfTime > 240) {
+    if (sumOfTime > MaxMINs) {
       return 'You have reached your limit, no more smartphoning for you!'
     }
-    if (60 < sumOfTime && sumOfTime <= 240) {
+    if (oneHour < sumOfTime && sumOfTime <= MaxMINs) {
       return `You have added ${numOfActivities} activities.They amount to ${time[1]} h and ${time[2]} min of usage`
     }
     return `You have added ${numOfActivities} activities.They amount to ${time[0]} min of usage`
@@ -76,10 +78,10 @@ function mostTime(array) {
     , combinedActivities[0])
   return `You has spent the most time on ${mda.activity} with ${mda.duration} m`;
 }
-console.log(showStatus('1-3-2021'))
+console.log(getStatus('1-3-2021'))
 addActivity('Youtube', 40);
 addActivity('Facebook', 20);
 addActivity('Facebook', 20);
-console.log(showStatus('1-3-2021'))
+console.log(getStatus('1-3-2021'))
 console.log(activities)
 console.log(mostTime(activities))
