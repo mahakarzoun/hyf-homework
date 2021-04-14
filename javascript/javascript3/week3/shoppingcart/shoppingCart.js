@@ -14,15 +14,15 @@ class ShoppingCart {
   }
 
   addProduct(product) {
+    product.id = `${product.name}${product.price}`
     this.products.push(product)
-    const totalProduct = document.getElementById('inBasket')
-    totalProduct.innerText = `${shoppingCart.getsum()}` // excute 3  ??
     return this.products
   }
 
-  removeProduct(product) {
-    const found = this.products.find(pr => pr.name === product)
-    this.products.splice(found, 1)
+  removeProduct(productId) {
+    const found = this.products.find(pr => pr.id === productId)
+    this.products.splice(found, 1) 
+    this.renderProducts() // render the new array of products
     return this.products
   }
 
@@ -50,6 +50,7 @@ class ShoppingCart {
     const totalProducts = document.querySelector('.totalProducts')
     totalProducts.innerText = ""
     title.appendChild(totalProducts)
+    const totalProduct = document.getElementById('inBasket')
     const search = document.getElementById('search')
     const value = search.value;
     const array = shoppingCart.searchProduct(value)
@@ -70,12 +71,15 @@ class ShoppingCart {
       remove = document.createElement('button')
       remove.classList.add('removeSpan')
       remove.innerHTML = `<i class="fas fa-trash-alt"></i>`
+      remove.addEventListener('click',() => shoppingCart.removeProduct(pro.id))
       product.appendChild(remove)
+
     })
     totalProducts.innerText = `(${shoppingCart.getsum()})`;
+    totalProduct.innerText = `${shoppingCart.getsum()}` 
   }
 
-  getUser() { // 
+  getUser() { 
      let api =  fetch('https://jsonplaceholder.typicode.com/users/1')
       .then(response => response.json())
       .then(renderUserName)
@@ -84,25 +88,23 @@ class ShoppingCart {
 }
 
 const shoppingCart = new ShoppingCart();
-const flatscreen = new Product("flat-screen", 5000, 'https://i.imgur.com/tGrnzjS.jpg');
-const screen = new Product("flat-screen", 4000, 'https://i.imgur.com/tGrnzjS.jpg');
+const flatscreen = new Product("flat-screen", 15000, 'https://i.imgur.com/tGrnzjS.jpg');
+const screen = new Product("flat-screen", 14000, 'https://i.imgur.com/tGrnzjS.jpg');
 const mobile = new Product("huwawei ", 7000, 'https://i.imgur.com/lvZqpqD.jpg');
+const headphone = new Product("sony",10000)
 shoppingCart.addProduct(flatscreen);
 shoppingCart.addProduct(screen);
 shoppingCart.addProduct(mobile);
 
 const button = document.querySelector('.btn')
 
-/*function renderUserName (response) {
+function renderUserName (response) {
 let data = response
 const name = document.getElementById('userName')
- name.innerText = `${data.username}` 
-}*/
-
- function renderShoppingPage () {
-  renderUserName()
-  button.addEventListener('click', shoppingCart.renderProducts)
+ name.innerText = `hello ${data.username} ! ` 
 }
 
 
-renderShoppingPage()
+shoppingCart.renderProducts()
+shoppingCart.getUser ()
+  button.addEventListener('click', shoppingCart.renderProducts)
