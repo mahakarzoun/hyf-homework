@@ -4,10 +4,9 @@ const limit = document.getElementById('nrOfGifs')
 const search = document.getElementById('expression')
 const button = document.getElementById('button')
 const gifsList = document.getElementById('gifsList')
-const p = document.createElement('p')
-p.innerText =""
-
-page.appendChild(p)
+const message = document.createElement('p')
+message.innerText =""
+page.appendChild(message)
 
 // fetch for the api 
 function renderGiphys(word, numberOfGif) {
@@ -25,21 +24,15 @@ function renderGiphys(word, numberOfGif) {
                 gifsList.appendChild(gif)
             })
         })
-/*if (word === ""){
-    p.innerText =" please fill out the search field"
-    } else if (numberOfGif == "") {
-     p.innerText =" please fill out the search field"
-    } else */
 }
 // add eventlistiner to the button 
 button.addEventListener('click', () => {
-    p.innerText = ""
+    message.innerText = ""
     gifsList.innerText = "";
     const word = search.value
     const numberOfGif = limit.value
     if (word === "" || numberOfGif === "" ){
-        p.innerText =" please fill out the required field"
+        message.innerText =" please fill out the required field"
         } else 
     renderGiphys(word, numberOfGif)
 })
-
