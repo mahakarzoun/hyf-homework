@@ -39,7 +39,7 @@ const getdogBreed =
     fetch('https://dog.ceo/api/breeds/list/all')
         .then((response) => response.json())
 
-function renderDogBreads() {
+function insertDogBreads() {
     const p = document.createElement('p')
     const ul = document.createElement('ul')
     p.innerText = 'List of The most famouse dogs breads'
@@ -55,7 +55,7 @@ function renderDogBreads() {
             })
         })
 }
-renderDogBreads();
+InsertDogBreads();
 
 
 
