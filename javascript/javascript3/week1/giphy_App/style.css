@@ -1,0 +1,37 @@
+body{
+    text-align: center;
+}
+h1 {
+    margin:10px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 60px;
+}
+#button{
+    border-radius:12px;
+    margin: 20px;
+    height:35px;
+    color:white;
+    font-weight: bold;
+    background-color:#7cd882;
+
+}
+#gifsList {
+    margin: 0 auto;
+}
+.scrollDiv{
+    align-content:center;
+    margin:20px 10px;
+    padding-top:5px;
+    background-color: rgb(219, 219, 219);
+    max-width: 550px;
+    max-height: 25rem;
+    overflow-y:auto;
+}
+
+.image{
+    margin: 0px 5px 20px;
+    width: 200px;
+    height:200px;
+    border: 20px white solid;
+    box-shadow:  2px 3px 5px rgb(180, 170, 170);
+}
