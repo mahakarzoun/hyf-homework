@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        button { /* defult:inline-block*/
+            width:75px;
+            height:40px;
+            margin: 0px 20px 20px 10px;
+            };
+            div {
+                display: flex;
+                flex-direction: row;
+            }
+            p {
+                color: brown;
+                display: inline; /* defult:block*/
+                margin: 0px;
+                text-align: center;
+            }
+            #onload{
+            position:absolute;
+            }
+            .pageLoad {
+            width: 200px;
+            height:30px;
+            padding:20px;
+
+
+            }
+    </style>
+    <title>excersises</title>
+    
+</head>
+<body>
+    <button class="counter"> press to count</button> 
+    <div>
+        <button id="delay"> delay button</button> 
+        <p id ="delayMessage"></p>
+    </div>
+    <div class="pageLoad">
+        <p id ="onload"></p>
+    </div>
+    <div>
+        <p id = "showCoords"></p>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
