@@ -4,5 +4,11 @@
     "name": "Benjamin Hughes",
     "email": "benjamin@hughes.dk",
     "mealId": 1
+  }, 
+  {
+    "id": 2,
+    "name": "maha karzoun",
+    "email": "maha.karzoun@gmail.dk",
+    "mealId": 2
   }
 ]
