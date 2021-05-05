@@ -21,8 +21,8 @@ const  cheapMeal = meals_reviewsJson.filter(meal => meal.price < 80)
 const  largeMeal = meals_reviewsJson.filter(meal => meal.maxNumberOfGuests > 4 )
 
 //render the data of a random meal in meal route 
-function  randomNumber (obj) { // what can  name the obj ?
-  return Math.floor(Math.random() * obj.length) + 0;
+function  randomNumber (array) { // what can  name the obj ?
+  return Math.floor(Math.random() * array.length) + 0;
 }
 function randomMeal (){
    return meals_reviewsJson[randomNumber(meals)]
@@ -44,8 +44,6 @@ app.get("/meals", async (request, response) => {
  response.setHeader('content-type','application/json')
   //response.send(meals_reviewsJson)
   response.send(meals_reviewsJson)
-   //response.json(meals)
-  // response.sendFile(__dirname + '/data/meals.json');
 });
 
 app.get("/cheap_meals", async (request, response) => {
