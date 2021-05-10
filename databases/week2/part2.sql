@@ -12,9 +12,7 @@ CREATE TABLE `Student` (
 `email` varchar(255) NOT NULL ,
  `phone` varchar(255)  NULL,
  `class_id` int  unsigned NOT NULL ,
- CONSTRAINT `fk_class`
- FOREIGN KEY (class_id)
-REFERENCES Class(id)
+ CONSTRAINT `fk_class` FOREIGN KEY (class_id) REFERENCES Class(id)
  );
 
 -- creating index

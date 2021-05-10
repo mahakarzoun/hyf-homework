@@ -1,16 +1,17 @@
 Use lesson2;
 SELECT * FROM task;
 --  Add a task
- insert into task (title, description, created, updated, due_date, status_id) values ('learn about REDs', '', now(), now() ,ADDDATE(now(), INTERVAL 10 DAY), '2');
+ insert into task (title, description, created, updated, due_date, status_id)
+ values ('learn about REDs', '', now(), now() ,ADDDATE(now(), INTERVAL  10 DAY), '2');
  
  -- Change the title of a task
 UPDATE task
 SET title = 'write a novel'
-WHERE id = 9;   -- what if a want it to find the word book from the title ;
+WHERE id = 9;   
 
 -- Change a task due date
 UPDATE task
-SET due_date= adddate(due_date, interval 1 month)  
+SET due_date= ADDDATE(due_date, interval 1 month)  
 WHERE id = 19 ;
 
 -- Change a task status
