@@ -1,11 +1,11 @@
 SELECT * 
 FROM mealsharing.reservation;
-/*insert into reservation(number_of_guests, meal_id, created_date, contact_phonenumber,contact_name,contact_email)
-values(2,3,current_timestamp(),'81788189','maha karzoun','maha.karzoun@gmail.com');
-insert into reservation(number_of_guests, meal_id, created_date, contact_phonenumber,contact_name,contact_email)
-values(3,2,current_timestamp(),'81654189','thea jensen','thea.jensen@gmail.com');*/
-/*insert into reservation(number_of_guests, meal_id, created_date, contact_phonenumber,contact_name,contact_email)
-values(3,4,current_timestamp(),'81654189','thea jensen','thea.jensen@gmail.com');*/
+
+insert into Reservation(number_of_guests, meal_id,contact_phonenumber,contact_name,contact_email)
+values
+(2,3,'81788189','maha karzoun','maha.karzoun@gmail.com'),
+(3,2,'81654189','thea jensen','thea.jensen@gmail.com'),
+(3,4,'81654189','thea jensen','thea.jensen@gmail.com');
 
 -- Get a reservation with any id, 
 select * from reservation
@@ -18,8 +18,5 @@ set number_of_guests = 3
 where id = 2 ;
 
  -- Delete a reservation with any id, fx 1
-delete 
-from reservation 
+delete from reservation 
 where id = 3 ;
-
-
