@@ -40,9 +40,8 @@ class CV {
         return this.job
     }
 
-    addEducation() {
-        // how to change the obj
-        this.educations.push(this)
+    addEducation(job) {
+        this.educations.push(job)
         return this.educations
     }
 
@@ -118,11 +117,5 @@ myCv.addJob(teacher)
 myCv.addJob(devoloper)
 myCv.addEducation(highSchool)
 myCv.addEducation(webDevoloping)
-console.log(myCv)
-/*
-myCv.removeJob(1) // devoloper should stay
-myCv.removeEducation(2) //high school should be removed 
-console.log(myCv)
-myCv.removeJob(3) // 
-myCv.removeEducation(2) // */
+
 myCv.renderCv(user1, myCv)
