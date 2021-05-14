@@ -54,24 +54,24 @@ class ShoppingCart {
     const search = document.getElementById('search')
     const value = search.value;
     const array = shoppingCart.searchProduct(value)
-    array.forEach(pro => {
+    array.forEach(element => {
       const product = document.createElement('div')
       product.classList.add('product')
       container.appendChild(product)
       const image = document.createElement('img')
       image.classList.add('image')
-      image.src = pro.imgSrc
+      image.src = element.imgSrc
       product.appendChild(image)
       const name = document.createElement('p')
-      name.innerText = pro.name;
+      name.innerText = element.name;
       product.appendChild(name)
       const price = document.createElement('p')
-      price.innerText = `price: ${pro.price}`;
+      price.innerText = `price: ${element.price}`;
       product.appendChild(price);
       remove = document.createElement('button')
       remove.classList.add('removeSpan')
       remove.innerHTML = `<i class="fas fa-trash-alt"></i>`
-      remove.addEventListener('click',() => shoppingCart.removeProduct(pro.id))
+      remove.addEventListener('click',() => shoppingCart.removeProduct(element.id))
       product.appendChild(remove)
 
     })
