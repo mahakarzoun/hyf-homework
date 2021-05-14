@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .topnav {
+      display:flex;
+      flex-direction: row;
+
+      justify-content: space-between;
+      background-color: rgb(235, 204, 204);
+      align-content: center; /*why user name is not centerd  */ 
+  }
+
+.pages {
+  display:flex;
+  text-align: center;
+  padding:0px;
+}
+  .topnav a {
+    align-self: center;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .pages a:hover {
+    background-color:rgb(233, 227, 227);
+  }
+  
+  .active {
+    background-color:#AC3B61;
+
+  }
+  .personalINfo {
+    justify-self: end;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 200px;
+  }
+
+  .icons { /*the space is not the same */
+    font-size:20px;
+    width:60px;
+    display: flex;
+    flex-direction: row;
+  }
+
+.icons :hover {  /*just hovering the icon*/
+  background-color: rgb(233, 227, 227);
+}
+
+.total {
+  font-size:12px
+}
+
+#userName {
+  font-size: 40px;
+  font-family:'Dancing Script', cursive;
+  align-self: center;
+
+}
+
+#searchDiv {
+  display:flex;
+}
+
+#search{
+  width:250px;
+  height: 30px;
+}
+.btn {  /*?? why  */ 
+  margin:0px;
+  width:35px
+}
+
+h1 {
+  font-family: serif;
+  font-size:3em;
+  font-weight: bolder;
+  margin-left:10px;
+  /*position: absolute;  
+  left: 49%;
+ transform: translate(-50%);*/
+}
+#mainPage {
+width:75%;
+height:max-content;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+}
+
+.productInfo{
+  font-size: large;
+}
+
+.product { /* how t oresize */ 
+  margin: 0px 0px 10px 10px;
+  width:20%;
+  height:300px;
+  padding:10px;
+  background-color: rgb(233, 227, 227);
+  }
+  .image{
+  width:100%;
+  height:200px;
+  }
+
+p  {
+  margin: 5px 0px;
+}
+
+.removeSpan {
+  background-color: white;
+  border: none;
+  width:27px;
+  height: 27px;
+  border-radius:50%;
+  /*how to get red of the button border when pressed*/
+}
+ .title {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+ }
+/*.removeSpan :hover {
+  trans
+}*/
