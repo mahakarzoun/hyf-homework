@@ -20,19 +20,19 @@ router.get("/", async (request, response) => {
         { error: errorMessage }
       )
     } else {
-      const fillteredMeals = meals.filter(meal => {
+       fillteredMeals = fillteredMeals.filter(meal => {
         fixedMealName = meal.title.toLowerCase()
         if (fixedMealName.includes(title.toLowerCase())) {
           return meal
         }
           response.send(`cant find a meal with title ${title} `)
       })
-      response.send(fillteredMeals)
+     response.send(fillteredMeals)
     }
   }
   response.send(meals)
 
-  // max prive query 
+  // max price query 
   if ("maxPrice" in request.query) {
     const maxPrice = parseInt(request.query.maxPrice);
     if (isNaN(maxPrice)) { 
@@ -56,7 +56,11 @@ router.get("/", async (request, response) => {
   }
 
   // createdAfter query 
-
+  if ("createdAfter" in request.query) {
+    let createdAfter = request.query.createdAfter
+  fillteredMeals = fillteredMeals.filter( meal=> meal.createdAfter.localCompare(createdAfter) == 1);
+  response.send(fillteredMeals)
+  }
 });
 
 
