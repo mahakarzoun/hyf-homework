@@ -55,7 +55,7 @@ function insertDogBreads() {
             })
         })
 }
-InsertDogBreads();
+insertDogBreads();
 
 
 
@@ -71,7 +71,7 @@ const renderDogInfo = () => {
             fetch(`https://dog.ceo/api/breed/${randomBreedName}/images/random`)
                 .then((response) => {
                     if (response.ok)
-                       return response.json()
+                        return response.json()
                     else
                         throw new Error(response.status);
                 })
@@ -87,4 +87,3 @@ q4.appendChild(document.createElement('img'))
 q4.appendChild(document.createElement('p'))
 
 setInterval(renderDogInfo, 4000);
-
