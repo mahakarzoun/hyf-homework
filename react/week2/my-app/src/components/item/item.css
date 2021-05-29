@@ -1,0 +1,12 @@
+li{
+  list-style-type: none;
+  background-color: #f4f4f4;
+  font-size: 82%;
+  margin-bottom: 5px;
+  padding: 10px 20px;
+ 
+}
+
+span.checked{
+        text-decoration: line-through;
+}
