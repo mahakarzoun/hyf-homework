@@ -6,19 +6,19 @@ const tasks = [
   {
     id: 1,
     task: 'Get out of bed',
-    deadLine: new Date(2017,9,13).toDateString()
+    deadLine: new Date(2017,9,14).toDateString()
 
   },
   {
     id: 2,
     task: ' Brush teeth',
-    deadLine: Date(2017,9,14).toDateString()
+    deadLine: new Date(2017,9,15).toDateString()
 
   },
   {
     id: 3,
     task: 'Eat breakfast',
-    deadLine: Date(2017,9,15).toDateString()
+    deadLine: new Date(2017,9,16).toDateString()
 
   }
 ]
