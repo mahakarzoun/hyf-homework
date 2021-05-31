@@ -1,5 +1,4 @@
 import TodoList from './TodoList'
-
 function Main(props) {
     return (
         <div>
