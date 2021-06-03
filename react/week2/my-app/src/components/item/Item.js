@@ -17,10 +17,10 @@ function Item(props) {
     const [checked, checkedState] = useState(false);
 
     return (
-        <li >
-            <span className={checked ? 'checked' : ''}> {props.item.task}</span>
-            <span> <input type="checkbox" onClick={toggle.bind(this, !checked)} /> </span>
-            <button onClick={deleteMe.bind(this)} >Delete</button>
+        <li className="taskLine">
+            <span  className={checked ? 'checked' : ''}> {props.item.task},{props.item.deadLine}</span>
+            <span> <input type="checkbox" onClick={toggle.bind( !checked)} /> </span>
+            <button onClick={deleteMe.bind()} >Delete</button>
 
         </li>
     )
