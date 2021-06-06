@@ -1,0 +1,11 @@
+.Header {
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    margin-bottom:10px;
+   
+  }
+  h1 {
+    margin-top:0px;
+    font-family: 'Brush Script MT';
+  }

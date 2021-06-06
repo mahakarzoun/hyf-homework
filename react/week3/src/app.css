@@ -1,0 +1,11 @@
+.container {
+  max-width: 50%;
+  min-height: 300px;
+  text-align: center;
+  margin: 30px auto;
+  padding: 30px;
+  border: 1px solid rgb(232, 175, 90);
+  border-radius: 5px;
+  
+}
+
