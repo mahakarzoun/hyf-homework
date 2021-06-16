@@ -1,21 +1,37 @@
 import "./app.css";
 import Main from "./containers/main/main";
 import Header from "./containers/header/header";
-import tasks from "./database/Tasks";
 import Counter from "./components/counter/counter";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [currentTasks, updateTasks] = useState(tasks);
+  useEffect(() => {
+    fetch(
+      "https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw"
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        updateTasks(data);
+        setLoading(false);
+      });
+  }, []);
+
+  const [currentTasks, updateTasks] = useState([]);
+  const [isLoading, setLoading] = useState(true);
 
   const deleteTask = (id) => {
     let filteredTasks = currentTasks.filter((task) => task.id !== id);
     updateTasks(filteredTasks);
   };
 
+  const updateTask = (id, description) => {
+    let updatedTasks = currentTasks.find((task) => task.id === id);
+    updatedTasks.description = description;
+    updateTasks(currentTasks);
+  };
+
   const addTask = (task) => {
-    debugger;
     let newTasks = [];
     if (task.text.length > 0) {
       for (let index = 1; index <= currentTasks.length; index++) {
@@ -35,9 +51,20 @@ function App() {
 
   return (
     <div className="container">
-      <Header onSubmit={addTask} />
-      <Main props={{ currentTasks: currentTasks }} onDeleteTask={deleteTask} />
-      <Counter />
+      {isLoading ? (
+        // <div class="spinner-border text-muted"></div>
+        <p>is loading ...</p>
+      ) : (
+        <div>
+          <Header onSubmit={addTask} />
+          <Main
+            props={{ currentTasks: currentTasks }}
+            onDeleteTask={deleteTask}
+            onUpdateTask={updateTask}
+          />
+          <Counter />
+        </div>
+      )}
     </div>
   );
 }

@@ -1,33 +1,63 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
-import './item.css';
+import "./item.css";
 
-function Item(props) {
+function Item({ onDeleteTask, onUpdateTask, item }) {
+  const edit = useRef();
 
-    const toggle = (event) => {
-         checkedState(!checked);
-    }
+  const toggle = (event) => {
+    checkedState(!checked);
+  };
 
-    const deleteMe = () => {
-        // dispatch event  .
-        props.onDeleteTask(props.item.id);
-    }
+  const deleteMe = () => {
+    onDeleteTask(item.id);
+  };
+  const update = () => {
+    changeMode("edit");
+  };
+  const save = () => {
+    changeMode("read");
+    onUpdateTask(item.id, edit.current.value);
+  };
 
-    const [checked, checkedState] = useState(false);
+  const [checked, checkedState] = useState(false);
+  const [mode, changeMode] = useState("read");
 
-    return (
-        <li className="taskLine">
-            <span  className={checked ? 'checked' : ''}> {props.item.task},{props.item.deadLine}</span>
-            <span> <input type="checkbox" onClick={toggle} /> </span>
-            <button onClick={deleteMe.bind()} >Delete</button>
-
-        </li>
-    )
+  return (
+    <li className="taskLine">
+      {mode === "read" ? (
+        <div>
+          <span className={checked ? "checked" : ""}>
+            {item.description},{item.deadline}
+          </span>
+          <span>
+            {" "}
+            <input type="checkbox" onClick={toggle} />{" "}
+          </span>
+        </div>
+      ) : (
+        <input ref={edit} type="text" placeholder={item.description} />
+      )}
+      <div>
+        <button
+          className="fa fa-pencil-square-o"
+          aria-hidden="true"
+          onClick={deleteMe}
+        >
+          delete
+        </button>
+        {mode === "read" ? (
+          <button className="material-icons" onClick={update}>
+            edit
+          </button>
+        ) : (
+          <button className="material-icons" onClick={save}>
+            save
+          </button>
+        )}
+      </div>
+    </li>
+  );
 }
-
-
-
-
-
 
 export default Item;

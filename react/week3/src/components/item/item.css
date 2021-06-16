@@ -1,12 +1,17 @@
-.taskLine{
+.taskLine {
   list-style-type: none;
   background-color: #f4f4f4;
-  font-size:90%;
+  font-size: 90%;
   margin-bottom: 10px;
-  padding: 20px ;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
-span.checked{
-        text-decoration: line-through;
+span.checked {
+  text-decoration: line-through;
 }
 
+i {
+  cursor: pointer;
+}

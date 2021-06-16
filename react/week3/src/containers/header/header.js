@@ -3,11 +3,8 @@ import { useState } from "react";
 import Button from "../../components/button/button";
 import Form from "../../components/form/form";
 
-const buttons = [{ name: "ADD TASK", value: "toggle" }];
-
 function Header({ onSubmit }) {
   const onSubmitTask = (task) => {
-    debugger;
     onSubmit(task);
     toggleForm(true);
   };
@@ -24,16 +21,14 @@ function Header({ onSubmit }) {
 
   const [isHidden, toggleForm] = useState(true);
 
-  const buttonsTemplate = buttons.map((button) => (
-    <Button key={button.value} onClick={handleClicks} props={button} />
-  ));
-
   return (
     <div className="Header">
-      <div>
-        <h1>my to-do list</h1>
-        {buttonsTemplate}
-      </div>
+      <h1>my to-do list</h1>
+      <Button
+        key={"toggle"}
+        onClick={handleClicks}
+        props={{ name: "add", value: "toggle" }}
+      />
       <Form props={{ hide: isHidden }} submitForm={onSubmitTask} />
     </div>
   );
