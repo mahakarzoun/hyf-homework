@@ -1,0 +1,13 @@
+Main {
+  text-align: center;
+}
+.noTask {
+  list-style-type: none;
+  background-color: #f4f4f4;
+  margin-bottom: 10px;
+  padding: 20px;
+  font-weight: bold;
+}
+ul{
+  padding: 0;
+}
